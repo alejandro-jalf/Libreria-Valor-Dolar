@@ -1,0 +1,20 @@
+{
+  "name": "libmoneda",
+  "version": "1.0.0",
+  "description": "Libreria para convertir moneda Mexicana a Dolar y viceversa, con descripcion en letra",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "alejandro-jalf <aleflo_1996@outlook.com> (Jose Alejandro Lopez Flores)",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "sequelize": "^4.41.0",
+    "sqlite3": "^4.0.3"
+  }
+}
