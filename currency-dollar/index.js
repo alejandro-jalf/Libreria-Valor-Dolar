@@ -1,11 +1,12 @@
-const parse = require ("./Letras")
+const parse = require ("../lib/Letras")
 const valDolar = require("../conexion_sqlite/conexion");
 
 
 let valorDolar=19.88;
 
-refreshValue = async () => {
-    const respuesta = await valDolar.getSetUpdateData();
+
+refreshValue = async (url) => {
+    const respuesta = await valDolar.getSetUpdateData(url);
     const item = respuesta[0];
 
     const vd = item.dolar;
@@ -13,15 +14,15 @@ refreshValue = async () => {
 }
 
 module.exports = {
-    async toDolar(value) {
-        valorDolar = await refreshValue();
+    async toDolar(value, url) {
+        valorDolar = await refreshValue(url);
         if(value < 0) {return 0;} else{return value/valorDolar;}
         if(typeof(value) === "string"){return 0;}else{return value/valorDolar;}
         
     },
 
-    async toMXN(value) {
-        valorDolar = await refreshValue();
+    async toMXN(value, url) {
+        valorDolar = await refreshValue(url);
         if(value < 0) {return 0;} else{return value*valorDolar;}
         if(typeof(value) === "string"){return 0;}else{return value*valorDolar;}
         return value*valorDolar;

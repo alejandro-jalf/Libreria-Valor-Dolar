@@ -2,7 +2,7 @@
   "name": "libmoneda",
   "version": "1.0.0",
   "description": "Libreria para convertir moneda Mexicana a Dolar y viceversa, con descripcion en letra",
-  "main": "lib/index.js",
+  "main": "currency-dollar",
   "scripts": {
     "test": "mocha"
   },

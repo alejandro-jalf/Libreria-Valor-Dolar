@@ -33,7 +33,7 @@ consulta = () => {
 }
 
 module.exports = {
-    async getSetUpdateData(){
+    async getSetUpdateData(us){
         let respuesta = await getDatos();
         const item = respuesta[0];
         const fechaActual = await getFecha();
@@ -41,7 +41,7 @@ module.exports = {
     
         if((item.fecha !== item2.fechac) || ((item.fecha === item2.fechac) && (item.hora !== dt.getHours())) ){
             // console.log("entra")
-            const valor = await getValor.consultaValor();
+            const valor = await getValor.consultaValor(us);
             const respt = await updateDatos(valor);
             respuesta = await getDatos();
             return respuesta;
